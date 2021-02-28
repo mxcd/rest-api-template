@@ -1,0 +1,40 @@
+{
+  "name": "rest-api-template",
+  "version": "1.0.0",
+  "description": "express REST API starter with prisma.io DB",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "npx prisma generate",
+    "watch": "tsc -w --copy-files",
+    "dev": "nodemon ./dist/index.js",
+    "ts-node-dev": "ts-node-dev ./src/index.ts",
+    "build": "tsc && copyfiles -f ./prisma/* ./dist/prisma/ && copyfiles package.json package-lock.json yarn.lock .env ./dist && cd dist && npm install --prod && npx prisma generate",
+    "prod": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxcd/rest-api-template.git"
+  },
+  "author": "Max Partenfelder <maxpartenfelder@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxcd/rest-api-template/issues"
+  },
+  "homepage": "https://github.com/mxcd/rest-api-template#readme",
+  "dependencies": {
+    "@prisma/client": "^2.17.0",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.31",
+    "copyfiles": "^2.4.1",
+    "prisma": "^2.17.0",
+    "ts-loader": "^8.0.17",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.2"
+  }
+}
