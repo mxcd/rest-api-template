@@ -15,7 +15,7 @@ For prototyping, a sqlite db is already in place. For heavier production loads, 
 ## Usage
 Adapt the `./prisma/schema.prisma` file to represent your data.  
 Then run `npx prisma generate` to create your own prisma DB client.  
-To update the DB, run `npx prisma migrate dev --preview-feature`  
+To update the DB, run `npx prisma migrate dev`  
 Then you can add your endpoints in the `./src/index.ts` file.  
 Feel free to create dedicated controllers under `./src/controller/<BusinessObjectName.ts>` if it gets out of hand putting them all in the `index.ts` file  
 
